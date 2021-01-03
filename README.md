@@ -12,6 +12,8 @@ Demo : https://revolunet.github.io/duniter-explorer/
 yarn dev
 ```
 
+Then open https://127.0.0.1:3000/duniter-explorer/
+
 ### Update GVA TypeScript definitions
 
 `yarn update-gva-definitions` will produce up-to-date definitions in `src/types/gva.d.ts`
