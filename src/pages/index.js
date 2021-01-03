@@ -1,1 +1,21 @@
-export default () => <div>io</div>;
+import Link from "next/link";
+import { Jumbotron, Button } from "react-bootstrap";
+
+const Page = () => (
+  <div>
+    <Jumbotron>
+      <h1>Duniter explorer</h1>
+      <p>
+        Static web app to explore duniter blockchain through the GraphQL
+        Validation API.
+      </p>
+      <p>
+        <Link href="/pubkey/2NPxu6pjYoLdangwYRQNxMXSM1fqkmt35zHdfKEsNs4w">
+          <Button variant="primary">Explorer un portefeuille</Button>
+        </Link>
+      </p>
+    </Jumbotron>
+  </div>
+);
+
+export default Page;

@@ -1,0 +1,5 @@
+schema: https://g1.librelois.fr/gva
+generates:
+  ./src/types/gva.d.ts:
+    plugins:
+      - typescript

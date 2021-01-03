@@ -1,3 +1,26 @@
-# JunExplore
+# Duniter explorer
 
-GVA (GraphQL Verification API) : https://g1.librelois.fr/gva
+A static frontend to explore the [Duniter](https://duniter.org/) blockchain
+
+Uses [GVA (GraphQL Verification API)](https://g1.librelois.fr/gva) for the blockchain data and the [Cesium+ API](http://doc.e-is.pro/cesium-plus-pod/REST_API.html) for additionnal informations (profiles, avatars...)
+
+## Development
+
+```
+yarn dev
+```
+
+### Update GVA TypeScript definitions
+
+`yarn update-gva-definitions` will produce up-to-date definitions in `src/types/gva.d.ts`
+
+### Environment variables
+
+| Key              | value                       |
+| ---------------- | --------------------------- |
+| GVA_ENDPOINT     | https://g1.librelois.fr/gva |
+| G1_DATA_NODE_URL | https://g1.data.le-sou.org  |
+
+### Références
+
+- [Duniter_Blockchain_Protocol_V12](https://git.duniter.org/nodes/common/doc/-/blob/master/rfc/0010_Duniter_Blockchain_Protocol_V12.md)

@@ -1,8 +1,8 @@
 {
-  "name": "gallium",
+  "name": "dunixplore",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "description": "A static frontend to explore the Duniter blockchain",
+  "license": "Apache-2.0",
   "dependencies": {
     "bootstrap": "^4.5.3",
     "date-fns": "^2.16.1",
@@ -19,6 +19,12 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
-    "build": "next build"
+    "build": "next build",
+    "update-gva-definitions": "graphql-codegen -c gva-codegen.yaml"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.0",
+    "@graphql-codegen/typescript": "^1.20.0",
+    "typescript": "^4.1.3"
   }
 }
