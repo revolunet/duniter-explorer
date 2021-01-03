@@ -4,7 +4,7 @@ A static frontend to explore the [Duniter](https://duniter.org/) blockchain
 
 Uses [GVA (GraphQL Verification API)](https://g1.librelois.fr/gva) for the blockchain data and the [Cesium+ API](http://doc.e-is.pro/cesium-plus-pod/REST_API.html) for additionnal informations (profiles, avatars...)
 
-Demo : https://revolunet.github.io/duniter-explorer
+Demo : https://revolunet.github.io/duniter-explorer/
 
 ## Development
 
