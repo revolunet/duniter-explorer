@@ -6,8 +6,11 @@ const Page = () => (
     <Jumbotron>
       <h1>Duniter explorer</h1>
       <p>
-        Static web app to explore duniter blockchain through the GraphQL
-        Validation API.
+        Static web app to explore{" "}
+        <a href="https://duniter.org" target="_blank">
+          duniter blockchain
+        </a>{" "}
+        through the GraphQL Validation API.
       </p>
       <p>
         <Link href="/pubkey/2NPxu6pjYoLdangwYRQNxMXSM1fqkmt35zHdfKEsNs4w">

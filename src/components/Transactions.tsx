@@ -4,7 +4,7 @@ import { request, gql } from "graphql-request";
 import useSWR from "swr";
 import { Spinner, Tabs, Tab, Table, Image as BsImage } from "react-bootstrap";
 
-import type { TxGva, TxsHistoryBlockchainQueryInner } from "@types/gva";
+import type { TxGva, TxsHistoryBlockchainQueryInner } from "../types/gva";
 
 import { gva } from "@lib/gva";
 import { formatCurrency } from "@lib/formatCurrency";

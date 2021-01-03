@@ -1,7 +1,7 @@
 import { request, gql } from "graphql-request";
 import useSWR from "swr";
 
-import type { AmountWithBase } from "@types/gva";
+import type { AmountWithBase } from "../types/gva";
 import { gva } from "@lib/gva";
 import { formatCurrency } from "@lib/formatCurrency";
 
