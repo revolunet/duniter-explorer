@@ -78,7 +78,7 @@ const G1_NODE_URL = `https://g1.data.le-sou.org`;
 const fetchProfile = (pubKey) =>
   fetch(`${G1_NODE_URL}/user/profile/${pubKey}`).then((r) => r.json());
 
-const Issuer = ({ pubKey }) => {
+const Issuer = ({ pubKey, imageWidth = 30 }) => {
   const [src, setSrc] = useState(null);
   const { data: profile, error } = useSWR(`profile-${pubKey}`, () =>
     fetchProfile(pubKey)
@@ -88,11 +88,11 @@ const Issuer = ({ pubKey }) => {
   const avatar = profile._source.avatar ? (
     <BsImage
       src={`data:${profile._source.avatar._content_type};base64,${profile._source.avatar._content}`}
-      width={30}
+      width={imageWidth}
       rounded
     />
   ) : (
-    <UserIcon width={30} />
+    <UserIcon width={imageWidth} />
   );
 
   return (
@@ -126,11 +126,11 @@ const PubKey = () => {
   );
 
   console.log("transactions", transactions);
-  if (error) return <div>failed to load</div>;
+  if (error) return <div>failed to load transactions</div>;
   if (!transactions) return <div>loading transactions...</div>;
   return (
     <div>
-      <h1>PubKey : {pubKey}</h1>
+      <Issuer pubKey={pubKey} imageWidth={60} />
       <Balance pubKey={pubKey} />
       <Table striped bordered hover>
         <thead>

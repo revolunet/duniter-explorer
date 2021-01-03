@@ -2,10 +2,12 @@ import React from "react";
 import App from "next/app";
 import Head from "next/head";
 
-// custom bootstrap
+import { Container } from "react-bootstrap";
+
+// custom bootstrap theme
 import "@styles/bootstrap-theme.scss";
 
-const Layout = ({ children }) => <div>{children}</div>;
+const Layout = ({ children }) => <Container>{children}</Container>;
 
 class MyApp extends App {
   render() {
