@@ -15,6 +15,9 @@ const Page = () => (
       <p>
         <Link href="/pubkey/2NPxu6pjYoLdangwYRQNxMXSM1fqkmt35zHdfKEsNs4w">
           <Button variant="primary">Explorer un portefeuille</Button>
+        </Link>{" "}
+        <Link href="https://github.com/revolunet/duniter-explorer">
+          <Button variant="light">Voir le projet sur GitHub</Button>
         </Link>
       </p>
     </Jumbotron>
