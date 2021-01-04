@@ -6,11 +6,17 @@ const Breadcrumbs = ({ breadcrumbs }) => (
   <Breadcrumb>
     {breadcrumbs.map((breadcrumb) =>
       breadcrumb.url && breadcrumbs.length > 1 ? (
-        <Breadcrumb.Item linkAs={Link} href={breadcrumb.url}>
+        <Breadcrumb.Item
+          key={breadcrumb.url}
+          linkAs={Link}
+          href={breadcrumb.url}
+        >
           <a>{breadcrumb.title}</a>
         </Breadcrumb.Item>
       ) : (
-        <Breadcrumb.Item active>{breadcrumb.title}</Breadcrumb.Item>
+        <Breadcrumb.Item key={breadcrumb.title} active>
+          {breadcrumb.title}
+        </Breadcrumb.Item>
       )
     )}
   </Breadcrumb>
