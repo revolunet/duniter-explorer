@@ -2,7 +2,7 @@ import React from "react";
 import format from "date-fns/format";
 import { request, gql } from "graphql-request";
 import useSWR from "swr";
-import { Spinner, Tabs, Tab, Table, Image as BsImage } from "react-bootstrap";
+import { Spinner, Table } from "react-bootstrap";
 
 import type { TxGva, TxsHistoryBlockchainQueryInner } from "../types/gva";
 

@@ -29,5 +29,5 @@ export const Balance: React.FC<BalancePropTypes> = ({ pubKey }) => {
     fetchBalance(pubKey)
   );
   if (error || !balance) return <h4>0</h4>;
-  return <h4>Balance : {formatCurrency(balance.balance.amount / 100)}</h4>;
+  return <h4>{formatCurrency(balance.balance.amount / 100)}</h4>;
 };

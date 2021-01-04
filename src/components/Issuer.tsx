@@ -15,11 +15,19 @@ type IssuerPropTypes = {
 export const Issuer: React.FC<IssuerPropTypes> = ({
   pubKey,
   imageWidth = 30,
+  fontSize = "1em",
 }) => {
   const { data: profile, error } = useSWR(`profile-${pubKey}`, () =>
     fetchProfile(pubKey)
   );
-  if (error || !profile || !profile._source) return null;
+  if (error || !profile || !profile._source)
+    return (
+      <span style={{ fontSize }}>
+        <Link href={`/pubkey/${pubKey}`}>
+          <a>{pubKey}</a>
+        </Link>
+      </span>
+    );
 
   const avatar = profile._source.avatar ? (
     <Image
@@ -33,7 +41,7 @@ export const Issuer: React.FC<IssuerPropTypes> = ({
 
   return (
     <Link href={`/pubkey/${profile._source.issuer}`}>
-      <a>
+      <a style={{ fontSize }}>
         {avatar}&nbsp;{profile._source.title}
       </a>
     </Link>

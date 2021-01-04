@@ -2,13 +2,12 @@ import * as React from "react";
 import App from "next/app";
 import Head from "next/head";
 import { Container } from "react-bootstrap";
-
+import useSWR, { SWRConfig } from "swr";
 import type { AppProps } from "next/app";
 
 // custom bootstrap theme
 import "@styles/bootstrap-theme.scss";
-
-const Layout = ({ children }) => <Container>{children}</Container>;
+import { Layout } from "@components/Layout";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -20,7 +19,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Layout>
-        <Component {...pageProps} />
+        <SWRConfig
+          value={{
+            refreshInterval: 10000,
+          }}
+        >
+          <Component {...pageProps} />
+        </SWRConfig>
       </Layout>
     </React.Fragment>
   );
