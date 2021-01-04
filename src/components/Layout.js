@@ -34,7 +34,7 @@ export const Layout = ({ children }) => {
     <Container>
       <Row>
         <Col>
-          <Breadcrumbs breadcrumbs={breadcrumbs} />
+          {breadcrumbs.length > 1 && <Breadcrumbs breadcrumbs={breadcrumbs} />}
         </Col>
       </Row>
       {children}

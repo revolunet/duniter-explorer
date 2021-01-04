@@ -13,7 +13,7 @@ const Page = () => (
         through the GraphQL Validation API.
       </p>
       <p>
-        <Link href="/pubkey/Do99s6wQR2JLfhirPdpAERSjNbmjjECzGxHNJMiNKT3P">
+        <Link href="/pubkey/pnSrZARn2gL5T5BLFGvLWFdWQ4RSLpQf8tJvBrK1GGE">
           <Button variant="primary">Explorer un portefeuille</Button>
         </Link>{" "}
         <Link href="https://github.com/revolunet/duniter-explorer">
