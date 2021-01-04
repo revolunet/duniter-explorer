@@ -3,6 +3,7 @@ import format from "date-fns/format";
 import { request, gql } from "graphql-request";
 import useSWR from "swr";
 import { Spinner, Table } from "react-bootstrap";
+import Link from "next/link";
 
 import type { TxGva, TxsHistoryBlockchainQueryInner } from "../types/gva";
 
@@ -119,6 +120,34 @@ const extractRecipientKeyFromOutputs = ({ senderKey, outputs }) =>
     .filter((tx) => tx.key !== senderKey)
     .map((tx) => tx.key);
 
+const isGannonceCrowdfunding = (comment) =>
+  comment.match(/^GANNONCE:CROWDF:([\d\w-]+)/);
+
+const isGannonce = (comment) => comment.match(/^GANNONCE:ANN:([\d\w-]+)/);
+
+const TransactionComment = ({ comment }) => {
+  const gAnnonceCrowdfundingMatches = isGannonceCrowdfunding(comment);
+  const gAnnonceMatches = isGannonce(comment);
+  if (gAnnonceMatches) {
+    return (
+      <Link
+        href={`https://gannonce.duniter.org/#/announce/${gAnnonceMatches[1]}`}
+      >
+        <a target="_blank">annonce Gannonce</a>
+      </Link>
+    );
+  } else if (gAnnonceCrowdfundingMatches) {
+    return (
+      <Link
+        href={`https://gannonce.duniter.org/#/announce/${gAnnonceCrowdfundingMatches[1]}`}
+      >
+        <a target="_blank">crowdfunding Gannonce</a>
+      </Link>
+    );
+  }
+  return <React.Fragment>{comment}</React.Fragment>;
+};
+
 export const Transactions: React.FC<TransactionsPropTypes> = ({
   pubKey,
   direction,
@@ -170,7 +199,9 @@ export const Transactions: React.FC<TransactionsPropTypes> = ({
                       direction={direction}
                     />
                   </td>
-                  <td>{node.comment}</td>
+                  <td>
+                    <TransactionComment comment={node.comment} />
+                  </td>
                 </tr>
               );
             })) || (
