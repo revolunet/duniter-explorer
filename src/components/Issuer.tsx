@@ -10,6 +10,7 @@ import { fetchProfile } from "@lib/cesium";
 type IssuerPropTypes = {
   pubKey: string;
   imageWidth?: number;
+  fontSize?: string;
 };
 
 export const Issuer: React.FC<IssuerPropTypes> = ({
