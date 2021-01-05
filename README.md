@@ -20,11 +20,11 @@ Then open https://127.0.0.1:3000/duniter-explorer/
 
 ### Environment variables
 
-| Key              | value                       |
-| ---------------- | --------------------------- |
-| BMA_ENDPOINT     | https://g1.cgeek.fr         |
-| GVA_ENDPOINT     | https://g1.librelois.fr/gva |
-| G1_DATA_NODE_URL | https://g1.data.le-sou.org  |
+| Key                          | value                       |
+| ---------------------------- | --------------------------- |
+| NEXT_PUBLIC_BMA_ENDPOINT     | https://g1.cgeek.fr         |
+| NEXT_PUBLIC_GVA_ENDPOINT     | https://g1.librelois.fr/gva |
+| NEXT_PUBLIC_G1_DATA_NODE_URL | https://g1.data.le-sou.org  |
 
 ### Références
 

@@ -166,7 +166,7 @@ export const Transactions: React.FC<TransactionsPropTypes> = ({
       <thead>
         <tr>
           <th>#</th>
-          <th>Date</th>
+          <th width={100}>Date</th>
           <th>{targetLabel}</th>
           <th>Montant</th>
           <th>Commentaire</th>

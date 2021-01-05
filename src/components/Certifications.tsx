@@ -38,7 +38,7 @@ export const Certifications: React.FC<CertificationsPropTypes> = ({
     <Table striped bordered hover>
       <thead>
         <tr>
-          <th>Date</th>
+          <th width={100}>Date</th>
           <th>{targetLabel}</th>
         </tr>
       </thead>

@@ -1,7 +1,7 @@
 import type { Profile } from "../types/cesium";
 
 const G1_DATA_NODE_URL =
-  process.env.G1_DATA_NODE_URL || `https://g1.data.le-sou.org`;
+  process.env.NEXT_PUBLIC_G1_DATA_NODE_URL || `https://g1.data.le-sou.org`;
 
 type EsProfile = {
   _source: Profile;

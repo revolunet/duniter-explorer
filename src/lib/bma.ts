@@ -2,7 +2,8 @@
 
 import type { Certifications } from "../types/bma";
 
-const BMA_ENDPOINT = process.env.BMA_ENDPOINT || "https://g1.cgeek.fr";
+const BMA_ENDPOINT =
+  process.env.NEXT_PUBLIC_BMA_ENDPOINT || "https://g1.cgeek.fr";
 
 type FetchCertificationsArgs = {
   pubKey: string;
